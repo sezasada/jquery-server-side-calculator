@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Server Side Calculator</title>
     <script src="jquery.js"></script>
     <script src="client.js"></script>
-    </head>
-    <body>
-        <h1>loaded</h1>
+</head>
 
-    </body>
+<body>
+    <form>
+        <label for="value1">Value 1:</label>
+        <input type="text" id="value1" name="value1">
+        <br>
+        <label for="value2">Value 2:</label>
+        <input type="text" id="value2" name="value2">
+        <br>
+        <label for="operation">Operation:</label>
+        <select id="operation" name="operation">
+          <option value="add">Add</option>
+          <option value="subtract">Subtract</option>
+          <option value="multiply">Multiply</option>
+          <option value="divide">Divide</option>
+        </select>
+        <br>
+        <button id="submit-button">Submit</button>
+        <button id="clear">C</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Guess History</th>
+            </tr>
+        </thead>
+        <tbody id="tableOf"></tbody>
+    </table>
+    <div id="result"></div>
+</body>
+
 </html>
