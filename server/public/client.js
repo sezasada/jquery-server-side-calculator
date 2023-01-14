@@ -1,26 +1,24 @@
-$(document).ready(onReady);
-
-function onReady() {
-    console.log('jquery is loaded');
-    appendDiv();
-    $('#submit-button').on('click', handleSubmit);
-}
-
-function handleSubmit() {
-    let history = {
-        value1: $('#value1').val(),
-        value2: $('#value2').val(),
-        operation: $('#operation').val()
-    };
-    $ajax({
-        type: 'POST',
-        url: '/calculate',
-        data: history
-    }).then(function (response) {
-        appendDiv();
+$(document).ready(function () {
+    $('form').submit(function (event) {
+        event.preventDefault();
+        let value1 = $('#value1').val();
+        let value2 = $('#value2').val();
+        let operation = $('#operation').val();
+        let hand = { 
+            value1: value1, 
+            value2: value2, 
+            operation: operation 
+        };
+        $.ajax ({
+            method: 'POST',
+            url: '/calculate',
+            data: hand
+        }).then(function (response) {
+            $("#result").text(response);
+        });
     });
-}
-
-function appendDiv() {
-    console.log('in append div');
-}
+    $("#clear").click(function () {
+        $("#value1").val("");
+        $("#value2").val("");
+    });
+});
