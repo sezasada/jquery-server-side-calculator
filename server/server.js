@@ -10,8 +10,11 @@ const PORT = 5000;
 
 app.use(express.static('server/public'));
 
+app.get('/history', (req, res) => {
+  res.send(history)
+})
 
-
+let history = [];
 app.post('/calculate', (req, res) => {
   let value1 = req.body.value1;
   let value2 = req.body.value2;
@@ -26,6 +29,12 @@ app.post('/calculate', (req, res) => {
   } else if (operation === 'divide') {
     result = value1 / value2;
   }
+  history.push({ 
+    value1: value1, 
+    value2: value2, 
+    operation: operation,
+    result: result 
+})
   res.send(result.toString())
 })
 
