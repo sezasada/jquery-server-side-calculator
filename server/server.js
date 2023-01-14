@@ -2,19 +2,16 @@ const express = require('express');
 
 const app = express();
 
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 const PORT = 5000;
 
 app.use(express.static('server/public'));
 
-app.use(bodyParser.urlencoded({ extended: true }))
 
-let history = [];
-
-app.get('/get-history', function (req, res) {
-    res.send(history);
-})
 
 app.post('/calculate', (req, res) => {
     console.log('in calculate');
