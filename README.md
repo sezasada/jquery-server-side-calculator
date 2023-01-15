@@ -1,9 +1,37 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Server Side Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This application showcases a server-side calculator. The calculations are done on the server and accessed by the client. There is a list below the inputs that shows all previous calculations as well as the result from the most recent calculation. There is a clear button that clears both inputs and the most recent result. 
+.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+### Prerequisites
+
+- Node.js(https://nodejs.org/en/)
+- Ajax
+- Js
+- html
+
+## Installation
+
+- fork this repo 
+- clone it
+- install node / run npm install 
+- run npm init 
+- run npm start 
+- you are now hosting a server locally on PORT 5000
+
+## Usage
+
+- User can input numbers in the the value1 / value2 placeholders
+- select the operator of your choosing
+- click the = sign 
+- your result will be shown bellow
+- click the C button to clear inputs and result. 
+
+## Acknowledgement
+Thanks to Emerging Digital Academy who equipped and helped me to make this application possible. 
+
+## Support
+
+For any questions you may have, email me at sezasada@icloud.com. 
