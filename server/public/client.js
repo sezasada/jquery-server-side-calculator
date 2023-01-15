@@ -1,4 +1,16 @@
 $(document).ready(function () {
+    $("#add").click(function () {
+        $("#operation").val('+');
+    });
+    $("#subtract").click(function () {
+        $("#operation").val('-');
+    });
+    $("#multiply").click(function () {
+        $("#operation").val('*');
+    });
+    $("#divide").click(function () {
+        $("#operation").val('/');
+    });
     $.get('/history', function (history) {
         history.forEach(function (event) {
             $("#history").append("<li>" + event.value1 + " " + event.operation + " " + event.value2 + " = " + event.result + "</li>");
@@ -28,8 +40,10 @@ $(document).ready(function () {
             });
         });
         $("#clear").click(function () {
-            $("#value1").val("");
-            $("#value2").val("");
+            $("#value1").val('');
+            $("#value2").val('');
+            $("#operation").val('');
+            $("#result").text('');
         });
     });
 });

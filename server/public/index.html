@@ -13,14 +13,17 @@
 
 <body>
     <form>
-        <input type="text" id="value1" placeholder="value1">
-        <select id="operation" name="operation">
-            <option value="add">Add</option>
-            <option value="subtract">Subtract</option>
-            <option value="multiply">Multiply</option>
-            <option value="divide">Divide</option>
-        </select>
-        <input type="text" id="value2" placeholder="value2">
+        <div class="onOneLine">
+            <input type="text" id="value1" placeholder="value1">
+            <input type="hidden" id="operation">
+            <div id="operations">
+                <button id="add" value="+">+</button>
+                <button id="subtract" value="-">-</button>
+                <button id="multiply" value="*">*</button>
+                <button id="divide" value="/">/</button>
+            </div>
+            <input type="text" id="value2" placeholder="value2">
+        </div>
         <br>
         <button type="submit">=</button>
         <button id="clear">C</button>

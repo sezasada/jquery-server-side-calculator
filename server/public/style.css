@@ -1,0 +1,4 @@
+.onOneLine {
+    display: flex;
+    flex-wrap: nowrap;
+}

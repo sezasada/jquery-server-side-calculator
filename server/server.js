@@ -20,14 +20,17 @@ app.post('/calculate', (req, res) => {
   let value1 = parseFloat(req.body.value1);
   let value2 = parseFloat(req.body.value2);
   let operation = req.body.operation;
+  if (!value1 || !value2 || !operation) {
+    return res.send('');
+  }
   let result;
-  if (operation === 'add') {
+  if (operation === '+') {
     result = value1 + value2;
-  } else if (operation === 'subtract') {
+  } else if (operation === '-') {
     result = value1 - value2;
-  } else if (operation === 'multiply') {
+  } else if (operation === '*') {
     result = value1 * value2;
-  } else if (operation === 'divide') {
+  } else if (operation === '/') {
     result = value1 / value2;
   }
   history.push({ 
@@ -36,8 +39,13 @@ app.post('/calculate', (req, res) => {
     operation: operation,
     result: result 
 })
-  res.send(result.toString())
-})
+  res.status(201).send(result.toString())
+  console.log(req.body);
+});
+
+app.get('/history', (req, res) => {
+  res.send(history);
+});
 
 app.listen(PORT, () => {
     console.log('listening on port', PORT)
