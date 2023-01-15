@@ -24,7 +24,7 @@ $(document).ready(function () {
             "</li>");
         });
     });
-    // added a event listener to the form (event.preventDefault) to prevent the submit button from submitting a form and tp
+    // added a event listener to the form (event.preventDefault) to prevent the submit button from submitting a form and to
     // prevent the browser from executing the default action of the selected element 
     $('form').submit(function (event) {
         event.preventDefault();
