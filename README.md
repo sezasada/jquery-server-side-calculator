@@ -25,7 +25,7 @@ This application showcases a server-side calculator. The calculations are done o
 
 - User can input numbers in the the value1 / value2 placeholders
 - select the operator of your choosing
-- click the = sign 
+- click the = 
 - your result will be shown bellow
 - click the C button to clear inputs and result. 
 

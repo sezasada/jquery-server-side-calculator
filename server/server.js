@@ -56,7 +56,7 @@ app.post('/calculate', (req, res) => {
 // sending the history array to client
 app.get('/history', (req, res) => {
   // this is res
-  res.send(history);
+  res.status(200).send(history);
 });
 
 app.listen(PORT, () => {
