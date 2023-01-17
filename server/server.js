@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 // not exaclty sure what this does: just know i need it
 app.use(bodyParser.urlencoded({ extended: true }))
 // determined port
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 // the files in the public folder are able to be accessed by the client 
 app.use(express.static('server/public'));
 // created history array to track calculations
