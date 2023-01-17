@@ -41,14 +41,14 @@ app.post('/calculate', (req, res) => {
     result = value1 / value2;
   }
   // pushing the values/operation/result to the history array
-  history.push({ 
-    value1: value1, 
-    value2: value2, 
+  history.push({
+    value1: value1,
+    value2: value2,
     operation: operation,
-    result: result 
-})
-// sending the result to client 
-// the toString() method will convert the string object into a string.
+    result: result
+  })
+  // sending the result to client 
+  // the toString() method will convert the string object into a string.
   res.status(201).send(result.toString())
   // logging the calculations so the can be seen in the terminal. 
   console.log(req.body);
@@ -60,5 +60,5 @@ app.get('/history', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log('listening on port', PORT)
+  console.log('listening on port', PORT)
 });
