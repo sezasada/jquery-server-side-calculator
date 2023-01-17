@@ -60,5 +60,6 @@ app.get('/history', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log('listening on port', PORT)
+  console.log(process.env);
+  console.log('listening on port', PORT);
 });
